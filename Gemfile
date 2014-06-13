@@ -14,6 +14,8 @@ gem 'icalendar', "~> 2.0"
 
 gem 'haml'
 
+gem 'mysql2'
+
 #gem 'net_dav'
 
 group :development do
