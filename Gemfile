@@ -24,7 +24,7 @@ group :development do
  gem "shotgun"
  gem 'sqlite3'
  gem 'tux'
- gem 'pry'
+ gem 'travis', require: false
 end
 
 group :production do
@@ -33,4 +33,11 @@ end
 
 group :test do
   gem 'rspec', '~> 2.9'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+end
+
+group :test, :development do
+  gem 'pry'
 end

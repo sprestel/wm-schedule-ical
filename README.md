@@ -17,3 +17,6 @@ postgresql database anlegen (vornehmlich wm_2014)
 
 ### tricks
 Databases adapter http://stackoverflow.com/a/23250038
+
+bundle config build.nokogiri --use-system-libraries
+bundler
