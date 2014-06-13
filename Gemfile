@@ -16,6 +16,8 @@ gem 'haml'
 
 gem 'mysql2'
 
+gem 'rake'
+
 #gem 'net_dav'
 
 group :development do
