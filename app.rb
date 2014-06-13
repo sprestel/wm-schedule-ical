@@ -9,6 +9,8 @@ require './environments'
 
 require 'icalendar'
 
+require './game'
+
 set :haml, :format => :html5
 
 get "/" do
@@ -23,7 +25,12 @@ get "/calendar.html" do
 end
 
 get "/calendar", :provides => 'html' do
-  @games = Game.all.order(:kickoff)
+  game = Game.order("updated_at DESC").first
+  last_modified game.updated_at
+  etag game
+  if stale?(etag: game, last_modified: game.updated_at)
+    @games = Game.all.order(:kickoff)
+  end
   haml :schedule  
 end
 

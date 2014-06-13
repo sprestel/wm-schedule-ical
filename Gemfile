@@ -27,3 +27,7 @@ end
 group :production do
  gem 'pg'
 end
+
+group :test do
+  gem 'rspec', '~> 2.9'
+end
