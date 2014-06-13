@@ -26,6 +26,7 @@ GEM
     json (1.8.1)
     method_source (0.8.2)
     minitest (5.3.4)
+    mysql2 (0.3.16)
     pg (0.17.1)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -36,6 +37,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rake (10.3.2)
     ripl (0.7.1)
       bond (~> 0.5.1)
     ripl-multi_line (0.3.1)
@@ -85,8 +87,10 @@ DEPENDENCIES
   activesupport
   haml
   icalendar (~> 2.0)
+  mysql2
   pg
   pry
+  rake
   rspec (~> 2.9)
   shotgun
   sinatra

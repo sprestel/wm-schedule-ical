@@ -3,8 +3,8 @@ require 'active_support/all'
 I18n.enforce_available_locales = true
 
 require './app'
-require './tracking'
-require './game'
+require './models/tracking'
+require './models/game'
 
 configure :development do
  set :database, 'sqlite3:name.db'

@@ -1,4 +1,3 @@
-
 class Tracking < ActiveRecord::Base
   enum download_type: [ :ics, :rss ]
   

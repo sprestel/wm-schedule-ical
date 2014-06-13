@@ -1,7 +1,7 @@
 # config.ru
 
 require './app'
-require './tracking'
-require './game'
+require './models/tracking'
+require './models/game'
 
 run Sinatra::Application
