@@ -1,4 +1,4 @@
-require File.expand_path '../../../game.rb', __FILE__
+require File.expand_path '../../../models/game.rb', __FILE__
 
 describe Game do
   

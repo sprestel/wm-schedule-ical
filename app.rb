@@ -9,7 +9,7 @@ require './environments'
 
 require 'icalendar'
 
-require './game'
+require './models/game'
 
 set :haml, :format => :html5
 
