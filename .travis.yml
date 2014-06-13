@@ -3,7 +3,11 @@ language: ruby
 services: mysql
 
 before_script:
-  - mysql -e 'create database myapp_test;'
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  
+env:
+  - RAILS_ENV=test
 
 rvm:
   - 2.1.1
