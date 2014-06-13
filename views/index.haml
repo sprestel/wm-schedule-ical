@@ -1,8 +1,9 @@
 %h1 WM - Spielplan
 %p== der deutschen Mannschaft als Download
-%h5
-  letzte Aktualisierung am
-  = Game.maximum(:updated_at).localtime.strftime("%Y-%m-%d %H:%M")
+- if Game.count > 0
+  %h5
+    letzte Aktualisierung am
+    = Game.maximum(:updated_at).localtime.strftime("%Y-%m-%d %H:%M")
 %h2 Available as:
 %p
   %a{href: "/calendar.ics"}

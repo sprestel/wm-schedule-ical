@@ -1,6 +1,6 @@
 # config.ru
 
-require './models/app'
+require './app'
 require './models/tracking'
 require './models/game'
 

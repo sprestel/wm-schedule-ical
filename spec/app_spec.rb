@@ -5,4 +5,13 @@ describe "My Sinatra Application" do
     get '/'
     expect(last_response).to be_ok
   end
+  context "no games available" do
+    before {
+      Game.stub(:count) {0}
+    }
+    it "should render the homepage" do
+      get '/'
+      expect(last_response).to be_ok
+    end
+  end
 end
