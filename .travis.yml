@@ -1,15 +1,22 @@
 language: ruby
-
+bundler_args: --without development --path=~/.bundle
 services: mysql
-
+before_install:
+- 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
+- git clone https://github.com/sprestel/bundle_cache.git
+- cd bundle_cache && git checkout dropbox_sdk && gem build bundle_cache.gemspec
+- gem install bundler bundle_cache*.gem
+- bundle_cache_install
+- cd ..
 before_script:
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
-  
+- bundle exec rake db:create && bundle exec rake db:migrate
+after_script:
+- bundle_cache
 env:
+  global:
+  - BUNDLE_ARCHIVE="new-bundle"
   - RAILS_ENV=test
-
+  - secure: QN6qOkK7OPj9sM8kXVO+HR5fb53Y1L07LU5ZkjvlRilMS2Lvt2tzkA+Pc6XdD9qZdqnIA3M6T/VXYOfTTRb0o4ONxXZstt2NaUEmGA0NXjBxsaG0Bc6fWh03/+NBOKqz4SCGoJ4fR6hjSfO5L5S1xZk0SlWZBwKxb53+1XoOKG4=
 rvm:
-  - 2.1.1
-
+- 2.1.1
 script: bundle exec rspec spec
